@@ -2,22 +2,48 @@ use std::vec;
 use rand::{distributions::Uniform, prelude::Distribution};
 fn main() {
     let pessoas = vec![
-        "Vinícius Toni",
-        "Elisandro Junior",
-        "Eric Silveira",
-        "Luís Bertelli",
+        "Miguel",
+        "Arthur",
+        "Théo",
+        "Heitor",
+        "Gael",
+        "Davi",
+        "Bernardo",
+        "Gabriel",
+        "Ravi",
+        "Noah",
+        "Samuel",
+        "Pedro",
+        "Benício",
+        "Benjamin",
+        "Matheus",
+        "Isaac",
+        "Anthony",
+        "Joaquim",
+        "Lucas",
+        "Lorenzo",
+        "Rafael",
+        "Nicolas",
+        "Henrique",
+        "Murilo",
+        "João",
+        "Lucca",
+        "Guilherme",
+        "Henry",
+        "Bryan",
+        "Gustavo",
     ];
 
-    let sorteio_que_sorteio = Uniform::from(0..pessoas.len());
+    let seed = Uniform::from(0..pessoas.len());
 
     let mut rng = rand::thread_rng();
 
-    let mut sorteio_pau: usize = 999;
+    let mut selected: usize = 999;
     for _ in 0..100 {
-        sorteio_pau = sorteio_que_sorteio.sample(&mut rng);
-        print!("{}", sorteio_pau);
+        selected = seed.sample(&mut rng);
+        print!("{}", selected);
     }
     println!("");
 
-    println!("O sorteado foi: {}!", pessoas[sorteio_pau]);
+    println!("O sorteado foi: {}!", pessoas[selected]);
 }
